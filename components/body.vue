@@ -22,18 +22,25 @@
             <p class="stepDesc">
               ご希望のお飾りの種類の画像をタップすると選択されます。
             </p>
+
             <button class="itemImgBtn" type="button" @click="check">
               <figure class="itemImgBtn_imgWrap">
                 <img src="/images/hinaningyo.png" alt />
               </figure>
               <h3 class="itemImgBtn_name_derkYellow">雛人形</h3>
             </button>
-            <button class="itemImgBtn" type="button">
+            <div class="showCheck" v-if="showCheck">
+              <img src="/images/check.svg" />
+            </div>
+            <button class="itemImgBtn" type="button" @click="checkWhite">
               <figure class="itemImgBtn_imgWrap">
                 <img src="/images/hinaningyo_white.png" alt />
               </figure>
               <h3 class="itemImgBtn_name_derkBlue">雛人形（白）</h3>
             </button>
+            <div class="showCheck" v-if="showCheckWhite">
+              <img src="/images/check.svg" />
+            </div>
           </div>
         </section>
       </section>
@@ -53,7 +60,24 @@
   </main>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      showCheck: false,
+      showCheckWhite: false,
+    };
+  },
+  methods: {
+    check() {
+      this.showCheck = true;
+    },
+    checkWhite() {
+      this.showCheckWhite = true;
+    },
+  },
+};
+</script>
 
 <style scoped>
 .main {
@@ -133,7 +157,7 @@
   box-sizing: border-box;
   border-style: solid;
   border-width: 0;
-  margin: 10em 0 0 0;
+  margin: 15em 0 0 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -291,6 +315,12 @@
   font-size: 16px;
   color: #fff;
   background-color: #494f5d;
+}
+
+.showCheck {
+  position: absolute;
+  top: 40px;
+  left: 40px;
 }
 
 .main_selectorFooter {
