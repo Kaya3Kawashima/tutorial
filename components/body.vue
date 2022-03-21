@@ -50,9 +50,7 @@
           <span class="totalPrice_red">0円（税込）</span>
         </div>
         <div class="ctrl">
-          <button class="ctrl_confirm 113455t" type="button">
-            注文内容確認
-          </button>
+          <button class="ctrl_confirm" type="button">注文内容確認</button>
           <button class="ctrl_btn_next" type="button">STEP.2</button>
         </div>
       </section>
@@ -407,8 +405,12 @@ export default {
   font-size: 14px;
   color: #fff;
   transition-property: background-color;
-  transition-duration: 0.4s;
+  transition: 0.3s;
   transition-timing-function: ease-out;
+}
+
+.ctrl_confirm:hover {
+  opacity: 0.7;
 }
 
 .ctrl_btn_next {
