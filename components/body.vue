@@ -23,22 +23,22 @@
               ご希望のお飾りの種類の画像をタップすると選択されます。
             </p>
 
-            <button class="itemImgBtn" type="button" @click="check">
+            <button class="itemImgBtn" type="button" @click="checkDerkYellow">
               <figure class="itemImgBtn_imgWrap">
                 <img src="/images/hinaningyo.png" alt />
               </figure>
               <h3 class="itemImgBtn_name_derkYellow">雛人形</h3>
             </button>
-            <div class="showCheck" v-if="showCheck">
+            <div class="showCheck_derkYellow" v-if="showCheckDerkYellow">
               <img src="/images/check.svg" />
             </div>
-            <button class="itemImgBtn" type="button" @click="checkWhite">
+            <button class="itemImgBtn" type="button" @click="checkDerkBlue">
               <figure class="itemImgBtn_imgWrap">
                 <img src="/images/hinaningyo_white.png" alt />
               </figure>
               <h3 class="itemImgBtn_name_derkBlue">雛人形（白）</h3>
             </button>
-            <div class="showCheck" v-if="showCheckWhite">
+            <div class="showCheck_derkBlue" v-if="showCheckDerkBlue">
               <img src="/images/check.svg" />
             </div>
           </div>
@@ -64,16 +64,16 @@
 export default {
   data() {
     return {
-      showCheck: false,
-      showCheckWhite: false,
+      showCheckDerkYellow: false,
+      showCheckDerkBlue: false,
     };
   },
   methods: {
-    check() {
-      this.showCheck = true;
+    checkDerkYellow() {
+      this.showCheckDerkYellow = true;
     },
-    checkWhite() {
-      this.showCheckWhite = true;
+    checkDerkBlue() {
+      this.showCheckDerkBlue = true;
     },
   },
 };
@@ -277,6 +277,7 @@ export default {
 }
 
 .itemImgBtn_name_derkYellow {
+  position: relative;
   text-align: inherit;
   text-transform: none;
   cursor: pointer;
@@ -297,6 +298,7 @@ export default {
 }
 
 .itemImgBtn_name_derkBlue {
+  position: relative;
   font: inherit;
   text-align: inherit;
   text-transform: none;
@@ -317,10 +319,16 @@ export default {
   background-color: #494f5d;
 }
 
-.showCheck {
+.showCheck_derkYellow {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 210px;
+  left: 280px;
+}
+
+.showCheck_derkBlue {
+  position: absolute;
+  top: 473px;
+  left: 280px;
 }
 
 .main_selectorFooter {
