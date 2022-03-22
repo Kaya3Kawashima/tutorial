@@ -1,15 +1,17 @@
 <template>
   <div>
-    <NavBar />
-    <Nuxt />
+    <Header />
+    <Body />
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue";
+import Header from "@/components/header.vue";
+import Body from "@/components/body.vue";
 export default {
   components: {
-    NavBar,
+    Header,
+    Body,
   },
 };
 </script>
